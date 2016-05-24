@@ -4,3 +4,20 @@
 		float:left;
 	}
   }
+
+// Encapsulating < & > for nav menu
+.nav-menu-endcap{
+	float: left;
+	color: @navbar-default-brand-color;
+	&:extend(.navbar-nav > li > a);
+	font-size: @font-size-base * 1.8;
+}
+
+// Active menu links (Not the best selectors...)
+.navbar-nav .is-active::before{
+	content: "\/* ";
+}
+
+.navbar-nav .is-active::after{
+	content: " *\/";
+}
